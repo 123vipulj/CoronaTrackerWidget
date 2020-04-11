@@ -1,0 +1,184 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E8DFDFDF"
+    android:padding="@dimen/widget_margin" >
+
+    <TextView
+        android:text="COVID19 INDIA"
+        android:textAlignment="center"
+        android:padding="10dp"
+        android:textStyle="bold"
+        android:fontFamily="@font/archia"
+        android:textSize="17sp"
+        android:textColor="#6D000000"
+        android:layout_above="@id/base_layout"
+        android:layout_marginBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <LinearLayout
+        android:id="@+id/base_layout"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_centerHorizontal="true"
+        android:weightSum="1.0"
+        android:layout_marginBottom="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <!--    Total confirm-->
+        <RelativeLayout
+            android:id="@+id/confim_layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".34"
+            android:background="@drawable/rounded_corner"
+            android:padding="20dp">
+
+            <TextView
+                android:id="@+id/total_c"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:autoSizeMinTextSize="9sp"
+                android:autoSizeMaxTextSize="13sp"
+                android:fontFamily="@font/archia"
+                android:textSize="12sp"
+                android:textColor="#A4FF1818"
+
+                android:text="@string/total_confirm"
+                tools:ignore="SmallSp" />
+
+            <TextView
+                android:id="@+id/confirm_cases"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:fontFamily="@font/archia"
+                android:textSize="16sp"
+                android:layout_below="@id/total_c"
+                android:textColor="#CEE60B0B"
+                android:paddingTop="5dp"
+                android:text="1022"
+                android:textAlignment="center"
+                />
+        </RelativeLayout>
+
+        <!--  Total Active  -->
+        <RelativeLayout
+            android:id="@+id/active_layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".33"
+            android:background="@drawable/rounded_corner_active"
+            android:layout_marginStart="10dp"
+            android:padding="20dp">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:fontFamily="@font/archia"
+                android:textSize="12sp"
+                android:textColor="#B21D39D3"
+                android:textAlignment="center"
+                android:text="Active" />
+
+            <TextView
+                android:id="@+id/total_active"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:fontFamily="@font/archia"
+                android:layout_below="@id/textView"
+                android:textColor="#1D38CD"
+                android:paddingTop="5dp"
+                android:text="1422"
+                android:textAlignment="center"
+                />
+        </RelativeLayout>
+
+        <!--    Total Recovered-->
+        <RelativeLayout
+            android:id="@+id/recoverd_layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".33"
+            android:background="@drawable/rounded_corner_recovered"
+            android:layout_marginStart="10dp"
+            android:padding="20dp">
+
+            <TextView
+                android:id="@+id/recoverd_txt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:autoSizeMinTextSize="9sp"
+                android:autoSizeMaxTextSize="13sp"
+                android:fontFamily="@font/archia"
+                android:textSize="12sp"
+                android:textColor="#DF4CAF50"
+                android:textAlignment="center"
+
+                android:text="Recovered" />
+
+            <TextView
+                android:id="@+id/total_recover"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:fontFamily="@font/archia"
+                android:layout_below="@id/recoverd_txt"
+                android:textColor="#11A617"
+                android:paddingTop="5dp"
+                android:text="120"
+                android:textAlignment="center"
+                />
+        </RelativeLayout>
+
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_below="@id/base_layout"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_marginEnd="15dp"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="LAST UPDATED"
+            android:gravity="end"
+            android:fontFamily="@font/archia"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:textColor="#7E4CAF50"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:ignore="RtlHardcoded" />
+
+<!--        <TextView-->
+<!--            android:id="@+id/updated_ago"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:gravity="end"-->
+<!--            android:text="12 dec 2020" />-->
+
+        <TextView
+            android:id="@+id/time_ago"
+            android:fontFamily="@font/archia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:text="12 dec 2020" />
+
+    </LinearLayout>
+
+</RelativeLayout>

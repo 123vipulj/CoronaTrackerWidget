@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_margin="15dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/state_name"
+            android:text="MAHARASTRA"
+            android:textStyle="bold"
+            android:fontFamily="@font/archia"
+            android:background="#416A6767"
+            android:padding="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <!--Details-->
+        <LinearLayout
+            android:layout_marginTop="4dp"
+            android:orientation="horizontal"
+            android:weightSum="1.0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="0dp"
+                android:layout_weight=".25"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:text="CONFIRMED"
+                    android:background="#79E11F1F"
+                    android:padding="4dp"
+                    android:fontFamily="@font/archia"
+                    android:textSize="13sp"
+                    android:textAlignment="center"
+                    android:textStyle="bold"
+                    android:autoSizeMinTextSize="13sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:background="#17EF1717"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/delta_confirm"
+                        android:fontFamily="@font/archia"
+                        android:text=""
+                        android:textSize="11sp"
+                        android:textStyle="bold"
+                        android:layout_marginStart="3dp"
+                        android:textColor="#FD0303"
+                        android:background="#17EF1717"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/confirmPerson"
+                        android:text="3252"
+                        android:fontFamily="@font/archia"
+                        android:padding="4dp"
+                        android:textStyle="bold"
+                        android:textAlignment="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_marginStart="3dp"
+                android:layout_width="0dp"
+                android:layout_weight=".25"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:text="ACTIVE"
+                    android:background="#802196F3"
+                    android:padding="4dp"
+                    android:fontFamily="@font/archia"
+                    android:autoSizeMinTextSize="13sp"
+                    android:textAlignment="center"
+                    android:textStyle="bold"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+
+                <TextView
+                    android:id="@+id/activePerson"
+                    android:text="3252"
+                    android:background="#3B2196F3"
+                    android:padding="4dp"
+                    android:fontFamily="@font/archia"
+                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_marginStart="3dp"
+                android:layout_width="0dp"
+                android:layout_weight=".25"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:text="RECOVERED"
+                    android:background="#804CAF50"
+                    android:padding="4dp"
+                    android:fontFamily="@font/archia"
+                    android:autoSizeMinTextSize="13sp"
+                    android:textStyle="bold"
+                    android:textSize="13sp"
+                    android:textAlignment="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:background="#404CAF50"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/delta_recover"
+                        android:text="↑ 121"
+                        android:textSize="11sp"
+                        android:fontFamily="@font/archia"
+                        android:textStyle="bold"
+                        android:layout_marginStart="3dp"
+                        android:textColor="#FD0303"
+                        android:background="#17EF1717"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/recoveredPerson"
+                        android:text="3252"
+                        android:fontFamily="@font/archia"
+                        android:padding="4dp"
+                        android:textStyle="bold"
+                        android:textAlignment="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_marginStart="3dp"
+                android:layout_width="0dp"
+                android:layout_weight=".25"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:text="DECEASED"
+                    android:background="#631B1A1A"
+                    android:padding="4dp"
+                    android:fontFamily="@font/archia"
+                    android:autoSizeMinTextSize="13sp"
+                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:background="#2A0C0C0C"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/delta_deceased"
+                        android:text="↑ 121"
+                        android:textSize="11sp"
+                        android:fontFamily="@font/archia"
+                        android:textStyle="bold"
+                        android:layout_marginStart="3dp"
+                        android:textColor="#FF1D1D"
+                        android:background="#25232121"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/deceasedPerson"
+                        android:text="3252"
+                        android:fontFamily="@font/archia"
+                        android:padding="4dp"
+                        android:textStyle="bold"
+                        android:textAlignment="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>
