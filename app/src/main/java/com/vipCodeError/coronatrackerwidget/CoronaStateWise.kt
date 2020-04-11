@@ -3,18 +3,13 @@ package com.vipCodeError.coronatrackerwidget
 import android.app.PendingIntent
 import android.appwidget.AppWidgetManager
 import android.appwidget.AppWidgetProvider
-import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
-import android.os.Bundle
 import android.util.Log
 import android.widget.RemoteViews
 import android.widget.Toast
-import com.vipCodeError.coronatrackerwidget.CoronaData.CoronaFetcher
 import com.vipCodeError.coronatrackerwidget.CoronaData.CoronaStateFetcher
-import com.vipCodeError.coronatrackerwidget.WidgetList.WidgetServiceClass
-import org.json.JSONArray
-import java.io.Serializable
+import com.vipCodeError.coronatrackerwidget.WidgetAdapter.WidgetServiceClass
 
 /**
  * Implementation of App Widget functionality.
@@ -53,18 +48,17 @@ class CoronaStateWise : AppWidgetProvider() {
             // Construct the RemoteViews object
             val ids = intent?.getIntExtra(AppWidgetManager.EXTRA_APPWIDGET_ID,0);
 
-            val arrListState = coronaStateFetcher.dataLoad;
+            val arrListState = coronaStateFetcher.dataLoad; // get Json String
             val remoteViews = RemoteViews(context?.packageName, R.layout.corona_state_wise)
-            val intent1 = Intent(context, WidgetServiceClass::class.java)
-            intent1.putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, ids);
-            intent1.putExtra("parc_arrayList", arrListState);
+
+            val intentRec = Intent(context, WidgetServiceClass::class.java)
+            intentRec.putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, ids);
+            intentRec.putExtra("parc_arrayList", arrListState);
 
             //set adapter on listview
-            remoteViews.setRemoteAdapter(R.id.stateWiseList, intent1) // bind adapter to listview
+            remoteViews.setRemoteAdapter(R.id.stateWiseList, intentRec) // bind adapter to listview
             AppWidgetManager.getInstance(context).updateAppWidget(ids!!, remoteViews)
 
-//            // Instruct the widget manager to update the widget
-//            appWidgetManager.updateAppWidget(appWidgetId, remoteViews)
             Toast.makeText(context, "Data Updated !!!", Toast.LENGTH_SHORT).show();
 
         }
@@ -83,22 +77,24 @@ internal fun updateAppWidgetState(
     thradsT.join()
 
     // Construct the RemoteViews object
-    val arrListState = coronaStateFetcher.dataLoad;
+    val arrListState = coronaStateFetcher.dataLoad; // get Json String
     val remoteViews = RemoteViews(context.packageName, R.layout.corona_state_wise)
+
     val intent = Intent(context, WidgetServiceClass::class.java)
     intent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, appWidgetId);
-    intent.putExtra("parc_arrayList", arrListState);
+    intent.putExtra("parc_arrayList", arrListState); // put json string into putextras
+
     // set pending intent on refresh button
-    val intentRef = Intent(context, CoronaStateWise::class.java)
-    intentRef.action = "REFRESH_DATA"
-    intentRef.putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, appWidgetId)
+    val intentRefData = Intent(context, CoronaStateWise::class.java)
+    intentRefData.action = "REFRESH_DATA"
+    intentRefData.putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, appWidgetId)
     val pendingIntent = PendingIntent.getBroadcast(context,
-        0, intentRef, PendingIntent.FLAG_CANCEL_CURRENT)
+        0, intentRefData, PendingIntent.FLAG_CANCEL_CURRENT)
 
     remoteViews.setOnClickPendingIntent(R.id.refresh_data, pendingIntent);
 
-    //set adapter on listview
-    remoteViews.setRemoteAdapter(R.id.stateWiseList, intent) // bind adapter to listview
+    // bind adapter to listview
+    remoteViews.setRemoteAdapter(R.id.stateWiseList, intent)
 
     // Instruct the widget manager to update the widget
     // appWidgetManager.notifyAppWidgetViewDataChanged(appWidgetId, R.id.stateWiseList)

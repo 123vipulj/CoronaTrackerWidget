@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
@@ -12,7 +13,6 @@
 
         <TextView
             android:id="@+id/state_name"
-            android:text="MAHARASTRA"
             android:textStyle="bold"
             android:fontFamily="@font/archia"
             android:background="#416A6767"
@@ -34,14 +34,15 @@
                 android:layout_weight=".25"
                 android:layout_height="wrap_content">
                 <TextView
-                    android:text="CONFIRMED"
+                    android:text="@string/confirmed"
                     android:background="#79E11F1F"
                     android:padding="4dp"
                     android:fontFamily="@font/archia"
                     android:textSize="13sp"
                     android:textAlignment="center"
                     android:textStyle="bold"
-                    android:autoSizeMinTextSize="13sp"
+                    android:autoSizeMaxTextSize="14sp"
+                    android:autoSizeMinTextSize="12sp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
 
@@ -64,7 +65,7 @@
 
                     <TextView
                         android:id="@+id/confirmPerson"
-                        android:text="3252"
+
                         android:fontFamily="@font/archia"
                         android:padding="4dp"
                         android:textStyle="bold"
@@ -83,11 +84,12 @@
                 android:layout_weight=".25"
                 android:layout_height="wrap_content">
                 <TextView
-                    android:text="ACTIVE"
+                    android:text="@string/active_cap"
                     android:background="#802196F3"
                     android:padding="4dp"
                     android:fontFamily="@font/archia"
-                    android:autoSizeMinTextSize="13sp"
+                    android:autoSizeMaxTextSize="14sp"
+                    android:autoSizeMinTextSize="12sp"
                     android:textAlignment="center"
                     android:textStyle="bold"
                     android:layout_width="match_parent"
@@ -96,7 +98,6 @@
 
                 <TextView
                     android:id="@+id/activePerson"
-                    android:text="3252"
                     android:background="#3B2196F3"
                     android:padding="4dp"
                     android:fontFamily="@font/archia"
@@ -114,11 +115,12 @@
                 android:layout_weight=".25"
                 android:layout_height="wrap_content">
                 <TextView
-                    android:text="RECOVERED"
+                    android:text="@string/recovered_cap"
                     android:background="#804CAF50"
                     android:padding="4dp"
                     android:fontFamily="@font/archia"
-                    android:autoSizeMinTextSize="13sp"
+                    android:autoSizeMaxTextSize="14sp"
+                    android:autoSizeMinTextSize="12sp"
                     android:textStyle="bold"
                     android:textSize="13sp"
                     android:textAlignment="center"
@@ -132,7 +134,6 @@
                     android:layout_height="wrap_content">
                     <TextView
                         android:id="@+id/delta_recover"
-                        android:text="↑ 121"
                         android:textSize="11sp"
                         android:fontFamily="@font/archia"
                         android:textStyle="bold"
@@ -144,7 +145,6 @@
 
                     <TextView
                         android:id="@+id/recoveredPerson"
-                        android:text="3252"
                         android:fontFamily="@font/archia"
                         android:padding="4dp"
                         android:textStyle="bold"
@@ -164,11 +164,12 @@
                 android:layout_weight=".25"
                 android:layout_height="wrap_content">
                 <TextView
-                    android:text="DECEASED"
+                    android:text="@string/deceased_cap"
                     android:background="#631B1A1A"
                     android:padding="4dp"
                     android:fontFamily="@font/archia"
-                    android:autoSizeMinTextSize="13sp"
+                    android:autoSizeMaxTextSize="14sp"
+                    android:autoSizeMinTextSize="12sp"
                     android:textStyle="bold"
                     android:textAlignment="center"
                     android:layout_width="match_parent"
@@ -181,7 +182,6 @@
                     android:layout_height="wrap_content">
                     <TextView
                         android:id="@+id/delta_deceased"
-                        android:text="↑ 121"
                         android:textSize="11sp"
                         android:fontFamily="@font/archia"
                         android:textStyle="bold"
@@ -189,11 +189,11 @@
                         android:textColor="#FF1D1D"
                         android:background="#25232121"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
+                        android:layout_height="wrap_content"
+                        tools:ignore="SmallSp" />
 
                     <TextView
                         android:id="@+id/deceasedPerson"
-                        android:text="3252"
                         android:fontFamily="@font/archia"
                         android:padding="4dp"
                         android:textStyle="bold"

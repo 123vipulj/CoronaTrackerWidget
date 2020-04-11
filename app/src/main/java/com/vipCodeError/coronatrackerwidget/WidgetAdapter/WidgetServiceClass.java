@@ -1,4 +1,4 @@
-package com.vipCodeError.coronatrackerwidget.WidgetList;
+package com.vipCodeError.coronatrackerwidget.WidgetAdapter;
 
 import android.content.Intent;
 import android.widget.RemoteViewsService;

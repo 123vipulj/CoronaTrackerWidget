@@ -6,7 +6,7 @@
     android:padding="@dimen/widget_margin" >
 
     <TextView
-        android:text="COVID19 INDIA"
+        android:text="@string/covid19_india"
         android:textAlignment="center"
         android:padding="10dp"
         android:textStyle="bold"
@@ -47,7 +47,6 @@
                 android:fontFamily="@font/archia"
                 android:textSize="12sp"
                 android:textColor="#A4FF1818"
-
                 android:text="@string/total_confirm"
                 tools:ignore="SmallSp" />
 
@@ -61,7 +60,7 @@
                 android:layout_below="@id/total_c"
                 android:textColor="#CEE60B0B"
                 android:paddingTop="5dp"
-                android:text="1022"
+
                 android:textAlignment="center"
                 />
         </RelativeLayout>
@@ -85,7 +84,7 @@
                 android:textSize="12sp"
                 android:textColor="#B21D39D3"
                 android:textAlignment="center"
-                android:text="Active" />
+                android:text="@string/active" />
 
             <TextView
                 android:id="@+id/total_active"
@@ -97,7 +96,7 @@
                 android:layout_below="@id/textView"
                 android:textColor="#1D38CD"
                 android:paddingTop="5dp"
-                android:text="1422"
+
                 android:textAlignment="center"
                 />
         </RelativeLayout>
@@ -124,7 +123,7 @@
                 android:textColor="#DF4CAF50"
                 android:textAlignment="center"
 
-                android:text="Recovered" />
+                android:text="@string/recovered" />
 
             <TextView
                 android:id="@+id/total_recover"
@@ -136,7 +135,7 @@
                 android:layout_below="@id/recoverd_txt"
                 android:textColor="#11A617"
                 android:paddingTop="5dp"
-                android:text="120"
+
                 android:textAlignment="center"
                 />
         </RelativeLayout>
@@ -154,7 +153,7 @@
         android:layout_height="wrap_content">
 
         <TextView
-            android:text="LAST UPDATED"
+            android:text="@string/last_updated"
             android:gravity="end"
             android:fontFamily="@font/archia"
             android:textSize="17sp"
@@ -177,7 +176,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="end"
-            android:text="12 dec 2020" />
+            />
 
     </LinearLayout>
 

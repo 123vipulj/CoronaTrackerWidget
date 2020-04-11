@@ -4,8 +4,7 @@ import android.appwidget.AppWidgetManager
 import android.appwidget.AppWidgetProvider
 import android.content.Context
 import android.widget.RemoteViews
-import com.vipCodeError.coronatrackerwidget.CoronaData.CoronaFetcher
-import java.util.*
+import com.vipCodeError.coronatrackerwidget.CoronaData.CoronaIndiaFetcher
 
 /**
  * Implementation of App Widget functionality.
@@ -37,7 +36,8 @@ internal fun updateAppWidget(
     appWidgetId: Int
 ) {
 
-    val coronaFetch = CoronaFetcher()
+    val coronaFetch =
+        CoronaIndiaFetcher()
     val thradsT = Thread(coronaFetch);
     thradsT.start()
     thradsT.join()
@@ -45,25 +45,19 @@ internal fun updateAppWidget(
     val coronaDataFetcher =  listOf(coronaFetch.dataLoad)
 
     val confirmCases = (coronaDataFetcher[0][0].toInt())
-//            coronaDataFetcher[0][4].toInt()).toString();
-
 
     val recoveredNow = (coronaDataFetcher[0][2].toInt())
-            //+ coronaDataFetcher[0][5].toInt()).toString();
+
     val totalActive  = (confirmCases.toInt() - recoveredNow.toInt()).toString();
 
-
-    //val last_updated = coronaDataFetcher[0][6]
-    val time_ago = coronaDataFetcher[0][3];
+    val timeAgo = coronaDataFetcher[0][3];
 
     // Construct the RemoteViews object
     val views = RemoteViews(context.packageName, R.layout.corona_widget)
     views.setTextViewText(R.id.confirm_cases, confirmCases.toString())
     views.setTextViewText(R.id.total_recover, recoveredNow.toString())
     views.setTextViewText(R.id.total_active, totalActive)
-    //views.setTextViewText(R.id.updated_ago, last_updated)
-    views.setTextViewText(R.id.time_ago, time_ago);
-
+    views.setTextViewText(R.id.time_ago, timeAgo);
 
     // Instruct the widget manager to update the widget
     appWidgetManager.updateAppWidget(appWidgetId, views)

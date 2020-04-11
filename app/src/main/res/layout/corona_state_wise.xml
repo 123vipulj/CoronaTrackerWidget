@@ -12,7 +12,7 @@
         android:weightSum="1.2"
         android:orientation="horizontal">
         <TextView
-            android:text="STATEWISE COVID19"
+            android:text="@string/statewise_covid19"
             android:textAlignment="center"
             android:padding="15dp"
             android:fontFamily="@font/archia"

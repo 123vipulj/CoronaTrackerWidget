@@ -42,7 +42,7 @@
                 android:resource="@xml/corona_widget_info" />
         </receiver>
 
-        <service android:name=".WidgetList.WidgetServiceClass"
+        <service android:name=".WidgetAdapter.WidgetServiceClass"
             android:permission="android.permission.BIND_REMOTEVIEWS"></service>
     </application>
 

@@ -1,16 +1,10 @@
 package com.vipCodeError.coronatrackerwidget.CoronaData;
 
-import junit.framework.TestCase;
-
-import org.jsoup.nodes.Document;
 import org.junit.Test;
 
 import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
 
-public class CoronaFetcherTest extends CoronaFetcher {
+public class CoronaFetcherTest extends CoronaIndiaFetcher {
 
     @Test
     public void testTestConnectServer() throws IOException {

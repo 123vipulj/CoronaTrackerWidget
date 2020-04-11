@@ -1,14 +1,12 @@
-package com.vipCodeError.coronatrackerwidget.WidgetList;
+package com.vipCodeError.coronatrackerwidget.WidgetAdapter;
 
 import android.appwidget.AppWidgetManager;
 import android.content.Context;
 import android.content.Intent;
-import android.os.Bundle;
 import android.util.Log;
 import android.widget.RemoteViews;
 import android.widget.RemoteViewsService;
 
-import com.vipCodeError.coronatrackerwidget.Helper.StateWiseHelper;
 import com.vipCodeError.coronatrackerwidget.Helper.WidgetStateWiseHelper;
 import com.vipCodeError.coronatrackerwidget.R;
 
@@ -17,8 +15,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 public class WidgetRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory
 {
