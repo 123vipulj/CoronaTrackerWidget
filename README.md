@@ -1,9 +1,6 @@
 # CoronaTrackerWidget
 
-Download Link <a href="https://drive.google.com/open?id=1NobeOmsrIDFE0ppDtyvVb6oD42EMuYt_">covidwidget_apr11.apk</a>
+Download Link <a href="https://drive.google.com/open?id=1x_Sq_uqRVIcnNS-CAgmcaO7hC7pHpB38">covidwidget_apr11.apk</a>
 
-<img src="https://drive.google.com/uc?export=view&id=1j99jzWpk7mGxxCeGFL2aiwvBZ74i4pEb" width="320" />
-
-<img src="https://drive.google.com/uc?export=view&id=1V2ZcPo-GCowjsJFudCxP1roA0jQsGfHk" width="320" />
-
-
+<img src="imgs/img1.jpg" width="320">
+<img src="imgs/img2.jpg" width="320">
