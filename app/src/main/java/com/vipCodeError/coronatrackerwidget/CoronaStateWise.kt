@@ -3,6 +3,7 @@ package com.vipCodeError.coronatrackerwidget
 import android.app.PendingIntent
 import android.appwidget.AppWidgetManager
 import android.appwidget.AppWidgetProvider
+import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
 import android.util.Log
@@ -40,24 +41,11 @@ class CoronaStateWise : AppWidgetProvider() {
         super.onReceive(context, intent)
         if (intent?.action.equals("REFRESH_DATA")){
 
-            val coronaStateFetcher = CoronaStateFetcher()
-            val thradsT = Thread(coronaStateFetcher);
-            thradsT.start()
-            thradsT.join()
+            val widgetIds: IntArray = AppWidgetManager.getInstance(context).getAppWidgetIds(
+                ComponentName(context!!, CoronaStateWise::class.java)
+            )
 
-            // Construct the RemoteViews object
-            val ids = intent?.getIntExtra(AppWidgetManager.EXTRA_APPWIDGET_ID,0);
-
-            val arrListState = coronaStateFetcher.dataLoad; // get Json String
-            val remoteViews = RemoteViews(context?.packageName, R.layout.corona_state_wise)
-
-            val intentRec = Intent(context, WidgetServiceClass::class.java)
-            intentRec.putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, ids);
-            intentRec.putExtra("parc_arrayList", arrListState);
-
-            //set adapter on listview
-            remoteViews.setRemoteAdapter(R.id.stateWiseList, intentRec) // bind adapter to listview
-            AppWidgetManager.getInstance(context).updateAppWidget(ids!!, remoteViews)
+            AppWidgetManager.getInstance(context).notifyAppWidgetViewDataChanged(widgetIds, R.id.stateWiseList)
 
             Toast.makeText(context, "Data Updated !!!", Toast.LENGTH_SHORT).show();
 

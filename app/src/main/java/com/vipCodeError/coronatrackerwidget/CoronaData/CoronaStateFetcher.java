@@ -68,16 +68,16 @@ public class CoronaStateFetcher implements Runnable {
         JSONArray jsonArray = new JSONArray();
         for (int i=0;i< stateWiseHelper.size();i++){
             JSONObject jsonObject = new JSONObject();
-            jsonObject.put("confirm", stateWiseHelper.get(i).getmConfirmed());
+            jsonObject.put("confirmed", stateWiseHelper.get(i).getmConfirmed());
             jsonObject.put("active", stateWiseHelper.get(i).getmActive());
             jsonObject.put("recovered", stateWiseHelper.get(i).getmRecovered());
-            jsonObject.put("death", stateWiseHelper.get(i).getmDeaths());
+            jsonObject.put("deaths", stateWiseHelper.get(i).getmDeaths());
             jsonObject.put("state", stateWiseHelper.get(i).getState());
             //delta
 
             jsonObject.put("deltaconfirmed", stateWiseHelper.get(i).getmDeltaConfirmed());
             jsonObject.put("deltarecovered", stateWiseHelper.get(i).getmDeltaRecovered());
-            jsonObject.put("deltadeath", stateWiseHelper.get(i).getmDeltaDeaths());
+            jsonObject.put("deltadeaths", stateWiseHelper.get(i).getmDeltaDeaths());
 
             jsonArray.put(jsonObject);
         }

@@ -48,7 +48,7 @@ internal fun updateAppWidget(
 
     val recoveredNow = (coronaDataFetcher[0][2].toInt())
 
-    val totalActive  = (confirmCases.toInt() - recoveredNow.toInt()).toString();
+    val totalActive  = (confirmCases - recoveredNow).toString();
 
     val timeAgo = coronaDataFetcher[0][3];
 
