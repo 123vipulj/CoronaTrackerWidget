@@ -6,7 +6,7 @@
     <!-- Strings used for fragments for navigation -->
     <string name="next">Next</string>
     <string name="previous">Previous</string>
-    <string name="total_confirm">Total Confirm</string>
+    <string name="total_confirm">Confirmed</string>
     <string name="desclaimer">In StateWise Widget .You need to manually refresh it by click on button which placed at top right corner.</string>
     <string name="desclaimer_guide">Go to Launcher widget section and select it.</string>
     <string name="statewise_covid19">STATEWISE COVID19</string>
